@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { CiFilter } from "react-icons/ci";
+import { AppProvider, useAppContext } from '../context/AppContext';
 
-const Home = () => {
+const Home = ({}) => {
+  
+  const {setShowAddUser} = useAppContext()
   return (
-    <div className='w-[90%] mx-auto py-8'>
+    <>
+    <div className='w-[90%] relative mx-auto py-8'>
       <div className='w-full flex items-center justify-around rounded shadow-2xl bg-white p-3'>
          <input type='search' placeholder='Search User'
           className='w-xl border-1 border-gray-500 p-2 text-md font-medium rounded ' />
@@ -26,10 +30,12 @@ const Home = () => {
                 <option value='100'>100</option>
             </select>
          </div>
-         <button className='text-xl font-semibold py-2 px-4 text-white bg-gradient-to-b 
+         <button onClick={() => setShowAddUser(true)} className='text-xl font-semibold py-2 px-4 text-white bg-gradient-to-b 
          from-yellow-500 to-black rounded border-0 cursor-pointer'>+ Add User</button>
       </div>
     </div>
+    
+    </>
   )
 }
 

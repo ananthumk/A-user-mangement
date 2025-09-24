@@ -23,19 +23,19 @@ const userSchema = mongoose.Schema({
     department: { type: String, required: true }
 })
 
-const User = mongoose.model('User', userSchema)
+const Users = mongoose.model('User', userSchema)
 
 app.post('/users', async (req, res) => {
     try {
         const { firstName, lastName, email, department } = req.body
         
 
-        const existingUser = await User.findOne({ email })
+        const existingUser = await Users.findOne({ email })
         if (existingUser) {
             return res.status(400).json({ message: 'User already exists' })
         }
 
-        const newUser = await User.create({ firstName, lastName, email, department})
+        const newUser = await Users.create({ firstName, lastName, email, department})
         return res.status(200).json({message: 'User created successfully', user: newUser})
     } catch (error) {
         console.log('Error in adding user: ', error.message)
@@ -47,8 +47,20 @@ app.post('/users', async (req, res) => {
 
 app.get('/users', async (req, res) => {
     try {
-        const user = await User.find()
+        const user = await Users.find()
         return res.status(200).json({user})
+    } catch (error) {
+        console.log('Error while fetching users: ', error.message)
+        return res.status(500).json({message: error.message})
+    }
+})
+
+app.get('/users/:id', async(req, res) => {
+    try {
+        const {id} = req.params
+        const user = await Users.findById(id)
+        if(!user) return res.status(200).json({message: 'User not Found'})
+        res.status(200).json({user})
     } catch (error) {
         console.log('Error while fetching user: ', error.message)
         return res.status(500).json({message: error.message})
@@ -60,7 +72,7 @@ app.put('/users/:id', async (req, res) => {
         const {id} = req.params 
         const {firstName, lastName, email, department} = req.body 
        
-        const updateUser = await User.findByIdAndUpdate(id,
+        const updateUser = await Users.findByIdAndUpdate(id,
             {firstName, lastName, email, department},
             { new: true}
         )
@@ -80,7 +92,7 @@ app.put('/users/:id', async (req, res) => {
 app.delete('/users/:id', async (req, res) => {
     try {
         const {id} = req.params 
-        const deletedUser = await User.findByIdAndDelete(id)
+        const deletedUser = await Users.findByIdAndDelete(id)
         
         if(!deletedUser){
             return res.status(400).json({message: 'User not found'})

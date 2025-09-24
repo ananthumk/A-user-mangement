@@ -28,7 +28,7 @@ const UserAddPopup = () => {
     }))
   }
   return (
-    <div className='fixed top-0 left-0 z-10 w-full flex justify-center items-center min-h-[100vh] bg-[rgba(0,0,0,0.5)]'>
+    <div className='fixed top-0 px-5 left-0 z-10 w-full flex justify-center items-center min-h-[100vh] bg-[rgba(0,0,0,0.5)]'>
       <div className='w-[95%] md:w-auto py-4 md:py-6 px-3 md:px-5 bg-white shadow-lg shadow-white rounded-md'>
          <div className='flex items-center justify-between'>
             <h2 className='text-xl font-medium text-yellow-800'>Add New User</h2>

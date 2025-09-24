@@ -41,7 +41,7 @@ const EditUserPopup = () => {
   };
 
   return (
-    <div className='fixed top-0 left-0 z-10 w-full flex justify-center items-center min-h-[100vh] bg-[rgba(0,0,0,0.5)]'>
+    <div className='fixed top-0 px-5 left-0 z-10 w-full flex justify-center items-center min-h-[100vh] bg-[rgba(0,0,0,0.5)]'>
       <div className=' py-6 px-5 bg-white shadow-lg shadow-white rounded-md'>
          <div className='flex items-center justify-between'>
             <h2 className='text-xl font-medium text-yellow-800'>Update User</h2>
@@ -49,7 +49,7 @@ const EditUserPopup = () => {
          </div>
 
          <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
-            <div className='flex gap-3 max-w-2xl items-center justify-between'>
+            <div className='flex flex-col md:flex-row gap-3 max-w-2xl items-center justify-between'>
                 <div>
                     <label className='text-md mb-2 font-semibold' >First Name</label>
                     <input type='text' name='firstName' onChange={handleChanges} placeholder='Enter your first name' value={updatedData.firstName} required

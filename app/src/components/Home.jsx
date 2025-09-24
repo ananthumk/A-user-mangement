@@ -19,7 +19,7 @@ const Home = ({}) => {
   return (
     <>
     <div className='w-[95%] md:w-[90%] relative mx-auto py-4 md:py-8'>
-      <div className='w-full flex flex-col md:flex-row items-center gap-4 md:gap-0 md:justify-around rounded shadow-2xl bg-white p-3'>
+      <div className='w-full flex flex-wrap flex-col md:flex-row items-center gap-4 md:gap-0 md:justify-around rounded shadow-2xl bg-white p-3'>
          <input type='search' value={searchQuery} placeholder='Search User' 
           onChange={(e) => setSearchQuery(e.target.value)}
           className='w-full md:w-xl border-1 border-gray-500 p-2 text-sm md:text-md font-medium rounded' />
@@ -47,7 +47,7 @@ const Home = ({}) => {
          </div>
 
          <button onClick={() => setShowAddUser(true)} 
-          className='text-sm md:text-lg font-semibold py-2 px-4 text-white bg-gradient-to-b from-yellow-500 to-black rounded border-0 cursor-pointer'>
+          className='text-sm md:mt-2 lg:mt-0 md:text-lg font-semibold py-2 px-4 text-white bg-gradient-to-b from-yellow-500 to-black rounded border-0 cursor-pointer'>
            + Add User
          </button>
       </div>

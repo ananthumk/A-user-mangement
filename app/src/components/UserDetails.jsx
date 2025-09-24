@@ -45,7 +45,7 @@ const UserDetails = () => {
         data.department?.toLowerCase().includes(searchQuery.toLowerCase())
       );
   return (
-    <div className=" w-[98%] mx-auto px-2">
+    <div className=" w-[95%] mx-auto ">
       <div className="overflow-x-auto">
         <table className='min-w-full mx-auto text-left border-collapse bg-white shadow-white'>
           <thead>

@@ -52,23 +52,23 @@ const EditUserPopup = () => {
             <div className='flex flex-col md:flex-row gap-3 max-w-2xl items-center justify-between'>
                 <div>
                     <label className='text-md mb-2 font-semibold' >First Name</label>
-                    <input type='text' value={data.firstName} name='firstName' onChange={handleChanges} placeholder='Enter your first name' value={updatedData.firstName} required
+                    <input type='text' name='firstName' onChange={handleChanges} placeholder='Enter your first name' value={updatedData.firstName} required
                      className='text-md font-medium w-full rounded-lg border-0 outline-1 outline-gray-400 p-2' />
                 </div>
                 <div>
                     <label className='text-md mb-2 font-semibold'>Last Name</label>
-                    <input type='text' value={data.lastName} name='lastName' onChange={handleChanges}  placeholder='Enter your last name' required value={updatedData.lastName}
+                    <input type='text'  name='lastName' onChange={handleChanges}  placeholder='Enter your last name' required value={updatedData.lastName}
                      className='text-md font-medium w-full rounded-lg border-0 outline-1 outline-gray-400 p-2' />
                 </div>
             </div>
             <div>
                     <label className='text-md mb-2 font-semibold'>Email</label>
-                    <input type='email' value={data.email} name='email' onChange={handleChanges} placeholder='Enter your email' required value={updatedData.email}
+                    <input type='email' name='email' onChange={handleChanges} placeholder='Enter your email' required value={updatedData.email}
                      className='text-md font-medium w-full rounded-lg border-0 outline-1 outline-gray-400 p-2' />
                 </div>
                 <div>
                     <label className='text-md mb-2 font-semibold'>Department</label>
-                    <select value={data.department} placeholder='Select department' name='department' onChange={handleChanges} value={updatedData.department} className='text-md font-medium w-full rounded-lg border-0 outline-1 outline-gray-400 p-2'>
+                    <select  placeholder='Select department' name='department' onChange={handleChanges} value={updatedData.department} className='text-md font-medium w-full rounded-lg border-0 outline-1 outline-gray-400 p-2'>
                         <option className='text-sm md:text-lg font-medium p-1' value='Design'>Design</option>
                         <option className='text-sm md:text-lg font-medium p-1' value='Finance'>Finance</option>
                         <option className='text-sm md:text-lg font-medium p-1' value='Engineering'>Engineering</option>
